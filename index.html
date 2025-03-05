@@ -4,16 +4,26 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portifolio</title>
 </head>
 <body class="bg-black">
     <header>
         <div class="img">
-            <h1>Portifólio</h1>
+            <h1> <i class="bi bi-person-circle icon"></i> Portifólio</h1>
         </div>
         
     </header>
+    <section class="separador">
+        <h1>Olá, Me chamo <strong class="name">Matheus Arcangelli</strong></h1>
+        <p style="font-size: 20px;">Analista e desenvolvedor de sistemas.</p>
+        <ul class="contato">
+         
+          <li><a href="https://www.linkedin.com/in/matheus-arcangelli-420749265/"><i class="bi bi-linkedin"></i></a</li>
+          <li><a href="https://www.instagram.com/devtheus.2005/?next=%2Farcan.gelli%2F"><i class="bi bi-instagram"></i></a></li>
+        </ul>
+    </section>
     <section class="sobre">
         <div id="sobre">
             <h1>Sobre mim</h1>
@@ -22,37 +32,42 @@
             <p>Meu objetivo é ingressar no mercado de trabalho na area de desenvolvimento web. Contudo, anvançar na área para entrar em desenvolvimento mobile</p>
         </div>
         <div id="imagem">
-            <img src="/img/Imagem do WhatsApp de 2024-11-22 à(s) 17.32.17_99571753.jpg" alt="">
+           <img src="img/nova.jpg" alt="">
         </div>
     </section>
     <section class="conhecimentos">
         <div id="Conhecimentos">
              <h1>Conhecimentos</h1>
                
-            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div id="carouselExampleAutoplaying" class="carousel slide carousel" data-bs-ride="carousel">
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                   <H1>HTML</H1>
+                    <img src="img/logo-html-5-512.png" alt="">
+                   <h3>HTML</h3>
                    <p>Nível: Intermediário</p>
                   </div>
-                  <div class="carousel-item">
-                    <H1>CSS</H1>
+                  <div class="carousel-item caroussel">
+                    <img src="img/64px-CSS3_logo_and_wordmark.svg.png" alt="">
+                    <h3>CSS</h3>
                    <p>Nível: Intermediário</p>
                   </div>
-                  <div class="carousel-item">
-                    <H1>JavaScript</H1>
+                  <div class="carousel-item caroussel">
+                   <img src="img/sticker-png-javascript-scalable-graphics-logo-encapsulated-postscript-javascript-icon-text-logo-number-sign-web-application.png" alt="">
+                    <h3>JavaScript</h3>
                    <p>Nível: Intermediário</p>
                   </div>
-                  <div class="carousel-item">
-                    <H1>TypeScript</H1>
+                  <div class="carousel-item caroussel">
+                    <img src="img/typescript-4096.png" alt="">
+                    <h3>TypeScript</h3>
                    <p>Nível: Iniciante</p>
                   </div>
-                  <div class="carousel-item">
-                    <H1>Nextjs</H1>
+                  <div class="carousel-item caroussel">
+                    <h3>Nextjs</h3>
                    <p>Nível: Iniciante</p>
                   </div>
-                  <div class="carousel-item">
-                    <H1>Php my admin</H1>
+                  <div class="carousel-item caroussel">
+                    <img src="img/phpMyAdmin-Logo.png" alt="">
+                    <h3>Php my admin</h3>
                    <p>Nível: Básico</p>
                   </div>
                 </div>
@@ -68,13 +83,39 @@
         </div>
         <div id="projetos">
             <h2>O que faço?</h2>
-            <ul>
-                <li>Desenvolvimento de sites</li>
-                <li>Web front end: html,css,js</li>
-                <li>Web back end: php, php my admin, nextjs</li>
-            </ul>
-        </div>
+            <div class="container">
+               <div class="oqFaco">
+              <h3>Desenvolvimento de sites</h3>
+              <p>Desenvolvimento de sites. Desde o seu desing até suas funcionalidades.</p>
 
+            </div>
+            <div class="oqFaco">
+              <h3>Requesitos</h3>
+              <p>Faço análises e levantamento de requesitos. Importante para determinar as funcionalidades do sistema.</p>
+
+            </div>
+            <div class="oqFaco">
+              <h3>Modelagem de dados</h3>
+              <p>Realize as modelagens do banco de dados. Desde conceitual ate seu modelo físico.</p>
+
+            </div>
+           </div>        
+        </div>
+        <button onclick="modal()"><i class="bi bi-question-circle"></i></button>
+      <div id="chat">
+              <h5>Tire suas duvidas</h5>
+              <p id="res"></p>
+                <form id="duvidas" action="">
+                  <select name="opcoes" id="op">      
+                     <option value="requesitos">O que são requesitos?</option>
+                     <option value="front-end">O que é Front end?</option>
+                     <option value="back-end">O que é Back end?</option>
+                  </select>
+                  <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+              
+
+      </div>
 
     </section>
    
@@ -82,7 +123,34 @@
 </html>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script>
+ 
+   const form = document.getElementById('duvidas');
+   const res = document.getElementById('res');
+   const chat = document.getElementById('chat');
    
+   function modal(){
+     if(chat.style.display === 'none'){
+      chat.style.display = 'block';
+     }else{
+      chat.style.display = 'none'
+     }
+  }
+   form.addEventListener('submit',(target)=>{
+    target.preventDefault();
+        const options = document.getElementById('op').value;
+
+      switch(options){
+        case 'requesitos':
+            res.innerHTML =`<p>Requesitos são as funcionalidades do sistema.<br> Levantar requesitos é definir quais funcionalidades do sistema.</p>`
+            break;
+        case 'front-end':
+          res.innerHTML = `Front end é a parte visual do sistema, sua interface gráfica.`
+          break;
+        case 'back-end':
+          res.innerHTML = `Back end é a parte responsável pela lógica. Processamento e armazenamneto dos seus dados.`
+      }
+
+   })
      
    
    
