@@ -101,21 +101,27 @@
             </div>
            </div>        
         </div>
-        <button onclick="modal()"><i class="bi bi-question-circle"></i></button>
-      <div id="chat">
-              <h5>Tire suas duvidas</h5>
-              <p id="res"></p>
-                <form id="duvidas" action="">
-                  <select name="opcoes" id="op">      
-                     <option value="requesitos">O que são requesitos?</option>
-                     <option value="front-end">O que é Front end?</option>
-                     <option value="back-end">O que é Back end?</option>
-                  </select>
-                  <button type="submit" class="btn btn-primary">Enviar</button>
-                </form>
-              
-
-      </div>
+        <button class="button" onclick="openModal()"><i class="bi bi-question-circle"></i></button>
+        <div id="overlay">
+            <div class="duvidas">
+                <div id="modal">
+                  <div class="modalHeader">
+                     <h5>Tire suas duvidas</h5>
+                      <button class="closeModal" onclick="closeModal()">X</button>
+                  </div>
+                      <form id="duvidas" action="">
+                        <select name="opcoes" id="op">      
+                          <option value="requesitos">O que são requesitos?</option>
+                          <option value="front-end">O que é Front end?</option>
+                          <option value="back-end">O que é Back end?</option>
+                        </select>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                      </form>
+                      <p id="res"></p>
+                  </div>
+             </div>
+         </div>
+       
 
     </section>
    
@@ -127,13 +133,13 @@
    const form = document.getElementById('duvidas');
    const res = document.getElementById('res');
    const chat = document.getElementById('chat');
-   
-   function modal(){
-     if(chat.style.display === 'none'){
-      chat.style.display = 'block';
-     }else{
-      chat.style.display = 'none'
-     }
+   const overlay = document.getElementById("overlay");
+
+   function openModal(){
+    overlay.style.display = 'flex'
+  }
+   function closeModal(){
+    overlay.style.display = 'none'
   }
    form.addEventListener('submit',(target)=>{
     target.preventDefault();
